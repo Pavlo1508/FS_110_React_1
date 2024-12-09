@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import User from "./components/User/user";
+import usersData from './assets/users.json'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React - is library</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      {/* <Header />
+      <h3>Tag</h3>
+      {33 + (11 * 44) / 3} */}
+      {/* {false ? <h2>Hello</h2> : <h2>Buy</h2>} */}
+      {/* <WelcomeSection />
+      <Footer />
 
-export default App
+      <Message author="Oleg" message="Hello!" isOnline={true} />
+      <Message author="Lecha" message="Hi!" isOnline={false} />
+      <Message author="Arnold" message="Buy!" isOnline={true} /> */}
+
+      <ul className="cardSteck">
+        {usersData.map((user) => (
+          <li key={user.id}>
+            <User {...user} />
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+};
+
+export default App;
